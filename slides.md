@@ -55,16 +55,49 @@ class: middle, left
 ```ini
 [br]
 main = master
+```
 
+```ini
 [alias]
 br-main = !git config --local --get br.main || git config --global --get br.main
 br-main-set = !sh -c 'git config --local --add br.main $1' -
 
 br-dev = !git config --local --get br.dev || git br-main
 br-dev-set = !sh -c 'git config --local --add br.dev $1' -
+
+upd = !git pull --rebase origin $(git br-dev) || ( git stash save && git pull --rebase origin $(git br-dev) && git stash pop )
+upm = !git pull --rebase origin $(git br-main) || ( git stash save && git pull --rebase origin $(git br-main) && git stash pop )
 ```
 
-???
+---
+class: middle, left
+
+# Diffing
+
+---
+class: middle, left
+
+# Rebasing
+
+---
+class: middle, left
+
+# Resolving Conflicts
+
+---
+class: middle, left
+
+# Pristine
+
+---
+class: middle, left
+
+# WIP
+
+---
+class: middle, left
+
+# Navigating Branches
 
 ---
 class: top, left
