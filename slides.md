@@ -401,10 +401,10 @@ class: middle, left
 
 ```ini
 [alias]
-cob = checkout -b
-
 com = !git checkout $(git br-main)
 cod = !git checkout $(git br-dev)
+
+cob = checkout -b
 
 cof = !git checkout $(git branch | grep -v '*' | fzf)
 ```
@@ -419,16 +419,17 @@ $ g co -
 
 Now the **last** thing I want to show you.
 
-Easy creation of branches
-
-```sh
-$ g cob fancy-branch
-```
 
 Quick ways to get back to the mainline branches, using my special sauce from earlier
 
 ```sh
 $ g com
+```
+
+Easy creation of branches
+
+```sh
+$ g cob fancy-branch
 ```
 
 Use fzf to go to an existing branch
